@@ -1,0 +1,11 @@
+{ 
+	"config": {
+
+		"full_name": "enter full name",
+
+		"email": "enter email for the full_name value",
+
+		"textEditor": "enter your favorite editor ( absolute path ) ex. /bin/vi"
+
+	}
+}
