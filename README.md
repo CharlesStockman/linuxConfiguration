@@ -38,6 +38,6 @@ to building a linux enivronment.  The three steps are:
 * . ./jsonToEnv.sh 			--> Add the JSON Entries to Environment Varaibles
 * ansible-playbook git.yaml		--> Configures the Global Configuration Git Variables		
 
-#### Clone all the repositories for a signle user using the ifnromation from description.json
+#### Clone all the repositories for a signle user using the information from description.json
 * . ./clooneAll.sh 
 
