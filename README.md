@@ -21,7 +21,7 @@ to building a linux enivronment.  The three steps are:
 * ./command.sh											--> load the commands ( ex. installs, updateWorld )
 * ./repository.sh										--> software to be loaded
 			
-* ./installs 												--> installs all the software found in repository.sh
+* ./installs 											--> installs all the software found in repository.sh
 * ./updateWorld											--> updates the software to the most current versions
 					
 #### cd into the Software Configuration
@@ -35,5 +35,9 @@ to building a linux enivronment.  The three steps are:
 
 #### Run the scripts to configure the system
 * cd `..`
-* . ./jsonToEnv.sh 						--> Add the JSON Entries to Environment Varaibles
+* . ./jsonToEnv.sh 			--> Add the JSON Entries to Environment Varaibles
 * ansible-playbook git.yaml		--> Configures the Global Configuration Git Variables		
+
+#### Clone all the repositories for a signle user using the ifnromation from description.json
+* . ./clooneAll.sh 
+

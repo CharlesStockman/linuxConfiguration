@@ -10,7 +10,7 @@
   tasks:
   - name: create GIT Directory 
     file: 
-      path: /home/cstockman/git 
+      path: "{{ lookup('env', 'config_github_top_level_directory') }}"  
       state: directory
 
   - name: setup Editor Value 

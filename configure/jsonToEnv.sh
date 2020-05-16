@@ -28,15 +28,26 @@ then
 	echo "The first argument is empty"
 	helpFunction
 else
-	config_fullName=$( echo `jq '.config.fullName' $1` )
-	echo $config_fullName
+	config_fullName=$( echo `jq '.config.full_name' $1` )
 	export config_fullName=$config_fullName
 
 	config_email=$( echo `jq '.config.email' $1` )
-	echo $config_email
 	export config_email=$config_email
 
 	config_textEditor=$( echo `jq '.config.textEditor' $1` )
-	echo $config_textEditor
 	export config_textEditor=$config_textEditor
+
+	config_github_username=$( echo `jq '.config.github.username' $1` | sed 's/"//g' )
+	export config_github_username=$config_github_username
+
+	config_github_personalAccessToken=$(echo `jq '.config.github.personalAccessToken' $1` | sed 's/"//g' )
+	export config_github_personalAccessToken=$config_github_personalAccessToken
+	 
+	config_github_top_level_directory=$HOME/git
+	export config_github_top_level_directory=$config_github_top_level_directory
+
+ 	echo "$0 --- Environemnt Variables Set ---"
+	printenv | grep config_
+	echo "$1 --- Environemnt Variables Set ---"
+
 fi

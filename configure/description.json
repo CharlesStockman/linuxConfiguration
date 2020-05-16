@@ -5,7 +5,12 @@
 
 		"email": "enter email for the full_name value",
 
-		"textEditor": "enter your favorite editor ( absolute path ) ex. /bin/vi"
+		"textEditor": "enter your favorite editor ( absolute path ) ex. /bin/vi",
+
+		"github": {
+			"username": "enter username for github",
+			"personalAccessToken": "A token generated from Github Settings/Personal Access Tokens"  
+		}
 
 	}
 }

@@ -25,9 +25,8 @@ function installs {
 #
 # Install a specific package
 #
-# S -->
-
-
+# 	-S 				install the package
+#       --noconfirm assume 		Bypass all the "Are you sure messages"
 #
 function install {
 	pacman -S --noconfirm $1

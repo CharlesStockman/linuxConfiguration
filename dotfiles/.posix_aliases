@@ -1,0 +1,8 @@
+#
+# A collection of aliases that should run int any posix complaint shell
+#
+
+#
+# Display all config_ that are part of environmental varibles.  The config_ values have a  high probability that they came from description.json
+#
+alias printConfig="printenv | grep config_"
