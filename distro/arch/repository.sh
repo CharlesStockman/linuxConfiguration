@@ -7,4 +7,4 @@ declare -A softwareList
 softwareList["ansible"]="ansible"
 softwareList["bin"]="jq"
 softwareList["office"]="libreoffice-fresh"
-
+softwareList["buildTools"]="maven"

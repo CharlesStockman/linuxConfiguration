@@ -33,6 +33,13 @@ function install {
 }
 
 #
+# Searh for a specific package 
+#
+function search {
+	pacman -Ss $1
+}
+
+#
 # Access the AUR using GUI  
 #
 # dependencies : pamac
