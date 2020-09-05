@@ -11,18 +11,20 @@ to building a linux enivronment.  The three steps are:
 
 ### Clone the directory
 	git clone https://github.com/CharlesStockman/linuxConfiguration.git
+	
+### Transform into a user that can run privlaged commands
+	sudo bash and then enter the password
 			
 #### Directory containing the scripts to install the software
-* cd `<cloned directory>`
-* cd `<distro>`
-* cd `<disto family>`
+* cd linuxConfiguration/distro
+* cd <distro family>
 			
 #### Install the software
-* ./command.sh											--> load the commands ( ex. installs, updateWorld )
-* ./repository.sh										--> software to be loaded
-			
-* ./installs 											--> installs all the software found in repository.sh
-* ./updateWorld											--> updates the software to the most current versions
+* . command.sh			--> loads the funtions ( ex. installs, updateWorld ) into the shell
+* . repository.sh		--> loads the associative array that contains software that should be installed on the system into the shell
+
+* updateWorld			--> updates the installed software to the most current versions
+* installs 			--> installs all the software found in the associtive array
 					
 #### cd into the Software Configuration
 * cd `<cloned directory>`
