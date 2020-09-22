@@ -3,8 +3,13 @@
 #
 # Update the whole system
 #
+# -S		Synchronization of core, community, multilib, extra repositories with local repositories
+# -y		refresh the local copy of the master package database
+# -u 		system update
+# --noconfirm	always answer yes to any question 
+#
 function updateWorld {
-	pacman -Syuu 
+	pacman -Syuu  --noconfirm 
 }
 
 #
