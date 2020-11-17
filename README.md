@@ -37,11 +37,11 @@ to building a linux enivronment.  The three steps are:
 * installs 			--> installs all the software found in the associtive array
 * search 			--> search for a package based on the string entered
 					
-#### cd into the Software Configuration
-* cd `<cloned directory>`
-* cd `<configuration>`
+#### Add information to the Json File
+* cd ..
+* cd configuration
 			
-#### Add your information into the json file					
+##### Modify the JON File					
 * ansible-playbook createDescription.yaml			--> Create a direcotry and copy description.json into it 
 * cd `<data>`
 * edit the description.json and put the values for your system in it. 
