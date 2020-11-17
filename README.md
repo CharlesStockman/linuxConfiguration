@@ -17,14 +17,25 @@ to building a linux enivronment.  The three steps are:
 			
 #### Directory containing the scripts to install the software
 * cd linuxConfiguration/distro
-* cd <distro family>
+* cd distroDirectory
 			
-#### Install the software
-* . command.sh			--> loads the funtions ( ex. installs, updateWorld ) into the shell
-* . repository.sh		--> loads the associative array that contains software that should be installed on the system into the shell
+#### Install the Software
 
+* . ./commands.sh		load the function from the file into the shell
+* . ./repository.sh		loads the associative array that contains software that should be installed on the system into the shell.
+
+##### On the command line call the functions to install the software
+
+* installs 			--> installs each package from the associative array found in the repository.sh
+* updateWorld			--> updates the system
+
+##### Standard functions found in the command.sh
+
+* command.sh			--> loads the funtions ( ex. installs, updateWorld ) into the shell
+* repository.sh			--> loads the associative array that contains software that should be installed on the system into the shell\
 * updateWorld			--> updates the installed software to the most current versions
 * installs 			--> installs all the software found in the associtive array
+* search 			--> search for a package based on the string entered
 					
 #### cd into the Software Configuration
 * cd `<cloned directory>`
