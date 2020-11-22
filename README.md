@@ -52,6 +52,6 @@ to building a linux enivronment.  The three steps are:
 * ansible-playbook git.yaml		--> Configures the Global Configuration Git Variables		
 
 #### Clone all the repositories for a signle user using the information from description.json
-cd $config_github_top_level_directory=/home/cstockman/git
+* cd $config_github_top_level_directory=/home/cstockman/git
 * . ./cloneAll.sh 
 
