@@ -45,6 +45,18 @@ function search {
 }
 
 #
+# Install nvidia
+#
+# If you run into trouble with CUDA not being available, run nvidia-modprobe first
+#
+function installNvidia {
+	mhwd -a pci nonfree 0300
+	nvidia-modprobe
+	reboot
+}
+
+
+#
 # Access the AUR using GUI  
 #
 # dependencies : pamac
