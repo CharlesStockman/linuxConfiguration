@@ -13,32 +13,51 @@ function updateWorld {
 }
 
 #
-# Splits an array and calls the install function 
-# 
-function installs { 
-        for packageGroupKey in "${!softwareList[@]}" 
-        do 
-            echo "**** Currently installing package group " $packageGroupKey 
-            for package in ${softwareList[$packageGroupKey]} 
-            do 
-                install $package 
-            done 
-            echo "**** Done supporting installing package gorup " $packageGroupKey 
-        done 
-} 
+# Installs software from different package installers
+#    Parameter 1 : The executable for the package manager
+#    Parameter 2 : The associative array containing the package names to be extracted.
+#    Parameter 3 : A string that desbribe the type of packages being extracted.
+#
+function installs {
+  local -n packages=$2
+  echo "Installing " $3
+  for packageGroupKey in "${!packages[@]}"
+    do
+      for package in ${packages[$packageGroupKey]}
+      do
+        $1 $package
+      done
+    done
+
+}
+
+#
+# Install all software package groups
+#
+function installAll {
+  installs install softwareList "softwareList"
+  installs installPip pipList "pipList"
+}
 
 #
 # Install a specific package
 #
 # 	-S 				install the package
-#       --noconfirm assume 		Bypass all the "Are you sure messages"
+#   --noconfirm assume 		Bypass all the "Are you sure messages"
 #
 function install {
 	pacman -S --noconfirm $1
 }
 
 #
-# Searh for a specific package 
+# Function install python libraries and applications
+#
+function installPip {
+  pip install $1
+}
+
+#
+# Search for a specific package
 #
 function search {
 	pacman -Ss $1
