@@ -26,7 +26,7 @@ to building a linux enivronment.  The three steps are:
 
 ##### On the command line call the functions to install the software
 
-* installs 			--> installs each package from the associative array found in the repository.sh
+* installAll 			--> Install all the software using the package executable ( Curretnly install pacman and pip )
 * updateWorld			--> updates the system
 
 ##### Standard functions found in the command.sh
@@ -34,7 +34,8 @@ to building a linux enivronment.  The three steps are:
 * command.sh			--> loads the funtions ( ex. installs, updateWorld ) into the shell
 * repository.sh			--> loads the associative array that contains software that should be installed on the system into the shell\
 * updateWorld			--> updates the installed software to the most current versions
-* installs 			--> installs all the software found in the associtive array
+* installs 			--> installs all the software found in the associtive array for a particular package executabl
+* installsAll			--> Installs all the software using the correct package manager for each.
 * search 			--> search for a package based on the string entered
 					
 #### Add information to the Json File
