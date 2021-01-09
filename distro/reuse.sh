@@ -29,6 +29,13 @@ function installAll {
 }
 
 #
+# Installs software from the repository
+#
+function install {
+	apt-get --yes install $1
+}
+
+#
 # Install a docker image
 #
 function installDockerImage {
