@@ -3,7 +3,7 @@
 Distrohopping is a fact of life for linux users.  I am working on making it easier.  The basic idea is there are three steps 
 to building a linux enivronment.  The three steps are:
 
-			* Install the sofware
+			* Install the sofware from multiple repostiroes including arch, pip and docker
 			* retrieve dotifles
 			* configure the linux system using scripts
 
@@ -17,42 +17,34 @@ to building a linux enivronment.  The three steps are:
 			
 #### Directory containing the scripts to install the software
 * cd linuxConfiguration/distro
-* cd distroDirectory
+* cd <distroDirectory>
 			
-#### Install the Software
-
-* . ./commands.sh		load the function from the file into the shell
-* . ./repository.sh		loads the associative array that contains software that should be installed on the system into the shell.
+#### load the function into the shell that will be used to Install the Software
+* . ../reuse.sh			loads the reusable functions
+* . ./commands.sh		loads the function, that will install the software from different repositories, into the shell
+* . ./repository.sh		loads the associative array(s) that contains software that should be installed on the system into the shell.
 
 ##### On the command line call the functions to install the software
-
-* installAll 			--> Install all the software using the package executable ( Curretnly install pacman and pip )
+* installAll 			--> Install all the software using the package executable ( Curretnly install pacman and pip and Docker )
 * updateWorld			--> updates the system
 
-##### Standard functions found in the command.sh
-
-* command.sh			--> loads the funtions ( ex. installs, updateWorld ) into the shell
-* repository.sh			--> loads the associative array that contains software that should be installed on the system into the shell\
+##### Standard functions found in the command.sh and reuse.sh
 * updateWorld			--> updates the installed software to the most current versions
-* installs 			--> installs all the software found in the associtive array for a particular package executabl
-* installsAll			--> Installs all the software using the correct package manager for each.
+* installAll			--> Installs all the software using the correct package manager for each.
 * search 			--> search for a package based on the string entered
-					
-#### Add information to the Json File
-* cd ..
-* cd configuration
-			
-##### Modify the JON File					
+
+##### Modify the JON File
+* cd ../configuration 
 * ansible-playbook createDescription.yaml			--> Create a direcotry and copy description.json into it 
 * cd `<data>`
 * edit the description.json and put the values for your system in it. 
 
 #### Run the scripts to configure the system
 * cd `..`
-* . ./jsonToEnv.sh 			--> Add the JSON Entries to Environment Varaibles
-* ansible-playbook git.yaml		--> Configures the Global Configuration Git Variables		
+* . ./jsonToEnv.sh 			--> Convert the JSON Entries to Environment Varaibles
+* ansible-playbook git.yaml		--> Configures the Global Configuration Git Variables to allow Git to be used		
 
-#### Clone all the repositories for a signle user using the information from description.json
-* cd $config_github_top_level_directory=/home/cstockman/git
-* . ./cloneAll.sh 
+#### Glone all Directories
+* cd ../../git
+* sh ./cloneAll.sh
 
