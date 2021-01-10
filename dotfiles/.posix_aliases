@@ -9,3 +9,18 @@ alias printConfig="printenv | grep config_"
 function toPdf() {
    libreoffice --convert-to pdf $1 > /dev/null 2>&1
 }
+
+#
+# Pretty Print a json String
+#
+function toJson {
+	echo -n -E $1
+	#echo $1 | jq 
+}
+
+#
+# Create a json string with no space or new lines
+#
+alias json_as_line_text=" cat /home/cstockman/git/linuxConfiguration/configure/data/description.json | sed 's/\t//g' | tr --delete '\n' > /tmp/tmp" 
+
+
