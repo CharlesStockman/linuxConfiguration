@@ -17,7 +17,7 @@ to building a linux enivronment.  The three steps are:
 			
 #### Directory containing the scripts to install the software
 * cd linuxConfiguration/distro
-* cd <distroDirectory>
+* cd <<distroDirectory>>
 			
 #### load the function into the shell that will be used to Install the Software
 * . ../reuse.sh			loads the reusable functions
