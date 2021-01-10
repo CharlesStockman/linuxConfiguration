@@ -44,7 +44,7 @@ to building a linux enivronment.  The three steps are:
 * . ./jsonToEnv.sh 			--> Convert the JSON Entries to Environment Varaibles
 * ansible-playbook git.yaml		--> Configures the Global Configuration Git Variables to allow Git to be used		
 
-#### Glone all Directories
+#### Clone all Directories
 * mkdir $HOME/git
 * cd $HOME/git
 * cloneAll.sh				--> Clones public and private repositories.  
