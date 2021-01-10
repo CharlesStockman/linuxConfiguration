@@ -45,6 +45,7 @@ to building a linux enivronment.  The three steps are:
 * ansible-playbook git.yaml		--> Configures the Global Configuration Git Variables to allow Git to be used		
 
 #### Glone all Directories
-* cd ../../git
-* sh ./cloneAll.sh
+* mkdir $HOME/git
+* cd $HOME/git
+* cloneAll.sh				--> Clones public and private repositories.  
 
