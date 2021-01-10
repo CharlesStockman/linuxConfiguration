@@ -42,7 +42,10 @@ else
 
 	config_github_personalAccessToken=$(echo `jq '.config.github.personalAccessToken' $1` | sed 's/"//g' )
 	export config_github_personalAccessToken=$config_github_personalAccessToken
-	 
+	
+	config_daemon=$(echo `jq '.config.daemons | join(", ")' $1` | sed 's/"//g' ) 
+	export config_daemon=$config_daemon
+
 	config_github_top_level_directory=$HOME/git
 	export config_github_top_level_directory=$config_github_top_level_directory
 

@@ -10,7 +10,11 @@
 		"github": {
 			"username": "enter username for github",
 			"personalAccessToken": "A token generated from Github Settings/Personal Access Tokens"  
-		}
+		},
+
+		"daemons": [
+			"enter your daemons on each line"
+		]
 
 	}
 }
