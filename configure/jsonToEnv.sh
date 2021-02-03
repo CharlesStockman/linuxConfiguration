@@ -37,6 +37,9 @@ else
 	config_textEditor=$( echo `jq '.config.textEditor' $1` )
 	export config_textEditor=$config_textEditor
 
+	config_dataDirectory=$( echo `jq '.config.dataDirectory' $1` | sed 's/"//g' )
+	export config_dataDirectory=$config_dataDirectory
+
 	config_github_username=$( echo `jq '.config.github.username' $1` | sed 's/"//g' )
 	export config_github_username=$config_github_username
 

@@ -5,6 +5,8 @@
 
 		"email": "enter email for the full_name value",
 
+		"dataDirectory": "enter the directory to store data files",
+
 		"textEditor": "enter your favorite editor ( absolute path ) ex. /bin/vi",
 
 		"github": {
