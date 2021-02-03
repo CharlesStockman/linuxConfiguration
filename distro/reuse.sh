@@ -7,13 +7,7 @@
 #    Parameter 3 : A string that desbribe the type of packages being extracted.
 #
 function installs {
-  echo $1
-  echo $2
-  echo $3 
   local -n packages=$2
-  echo packages
-  echo "Installing " $3
-  echo "--------------------------------------"
   for packageGroupKey in "${!packages[@]}"
     do
       echo $packageGroupKey
@@ -31,14 +25,8 @@ function installs {
 function installAll {
   installs  install softwareList "softwareList"
   installs installPip pipList "pipList"
+  startDocker
   installs installDockerImage "dockerList"
-}
-
-#
-# Installs software from the repository
-#
-function install {
-	apt-get --yes install $1
 }
 
 #
@@ -66,3 +54,11 @@ function startDaemons {
 	eval "$string &"
   done 
 }
+
+#
+# Start the Docker Daemon
+#
+function startDocker {
+	dockerd &
+}
+
