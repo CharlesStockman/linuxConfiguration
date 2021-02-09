@@ -16,7 +16,9 @@
 
 		"daemons": [
 			"enter your daemons on each line"
-		]
+		],
+
+		"defaultCconsole": "The Default GUI Terminal ( ex. konsole -e /bin/bash" )"
 
 	}
 }

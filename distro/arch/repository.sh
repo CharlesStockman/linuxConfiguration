@@ -12,6 +12,7 @@ softwareList[buildTools]="maven"
 softwareList[ide]="intellij-idea-community-edition 2:2020.2.3-1 community/pycharm-community-edition 2020.2.3-3"
 softwareList[docker]="docker"
 softwareList[qemu]="qemu"
+softwareList[awesome]="awesome"
 
 pipList[libraries]="psutil"
 

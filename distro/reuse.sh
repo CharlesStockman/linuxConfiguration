@@ -10,9 +10,10 @@ function installs {
   local -n packages=$2
   for packageGroupKey in "${!packages[@]}"
     do
-      echo $packageGroupKey
+      echo "*** "$packageGroupKey
       for package in ${packages[$packageGroupKey]}
       do
+	echo "**** "$package
         $1 $package
       done
     done
@@ -23,10 +24,10 @@ function installs {
 # Install all software package groups
 #
 function installAll {
-  installs  install softwareList "softwareList"
+  installs  installPm softwareList "softwareList"
   installs installPip pipList "pipList"
-  startDocker
-  installs installDockerImage "dockerList"
+  #startDocker
+  #installs installDockerImage "dockerList"
 }
 
 #

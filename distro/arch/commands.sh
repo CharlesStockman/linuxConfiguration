@@ -18,7 +18,8 @@ function updateWorld {
 # 	-S 				install the package
 #   --noconfirm assume 		Bypass all the "Are you sure messages"
 #
-function install {
+function installPm {
+	echo "***** "$1
 	pacman -S --noconfirm $1
 }
 

@@ -14,8 +14,7 @@
 
 # Notes -e --> Interpretation of backslash escapes ; -E disable interpretation of backslash escapes (default)
 
-function helpFunction() 
-{
+function helpFunction {
 	echo "Usage: $0 <JSON Document>" 
 	echo -e "\t The only argument is the path to a JSON File" 
 }
@@ -51,6 +50,9 @@ else
 
 	config_github_top_level_directory=$HOME/git
 	export config_github_top_level_directory=$config_github_top_level_directory
+
+	config_terminal_emulator=$(echo `jq '.config.github.username' $1` | sed 's/"//g' )
+	#export config_terminal_emulator=$config_terminal_emualtor
 
  	echo "$0 --- Environemnt Variables Set ---"
 	printenv | grep config_
