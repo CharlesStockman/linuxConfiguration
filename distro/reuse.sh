@@ -26,8 +26,16 @@ function installs {
 function installAll {
   installs  installPm softwareList "softwareList"
   installs installPip pipList "pipList"
+  installs installGlobalNpm globalNpmList "globalNpmList"
   #startDocker
   #installs installDockerImage "dockerList"
+}
+
+#
+# Install gloal npm packages
+#
+function installGlobalNpm {
+   npm install --global $1
 }
 
 #

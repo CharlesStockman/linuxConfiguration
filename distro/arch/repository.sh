@@ -5,6 +5,7 @@
 declare -A softwareList
 declare -A pipList
 declare -A dockerList
+declare -A globalNpmList
 
 softwareList[ansible]="ansible"
 softwareList[bin]="jq gcc"
@@ -13,7 +14,10 @@ softwareList[ide]="intellij-idea-community-edition 2:2020.2.3-1 community/pychar
 softwareList[docker]="docker"
 softwareList[qemu]="qemu"
 softwareList[awesome]="awesome"
+softwareList[nodejs]="nodejs npm"
 
 pipList[libraries]="psutil"
 
 dockerList[databases]="mongo"
+
+globalNpmList["angular"]="@angular/cli"
