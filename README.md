@@ -9,29 +9,42 @@ to building a linux enivronment.  The three steps are:
 
 ## Steps
 
-### Clone the directory
+### Download all software for the linux distributin first.
+
+The developer needs two scripts : 
+
+			* command.sh which contains the function for updating/installing/searching for a specific distro 
+			* Repository.sh is a list of all the software the developer wants to download.  
+
+#### Clone the directory
 	git clone https://github.com/CharlesStockman/linuxConfiguration.git
 	
-### Transform into a user that can run privlaged commands
+#### Transform into a user that can run privlaged commands
 	sudo bash and then enter the password
 			
-#### Directory containing the scripts to install the software
-* cd linuxConfiguration/distro
-* cd \<distroDirectory\>
-			
-#### load the function into the shell that will be used to Install the Software
+##### Directory containing the scripts to install the software
+* cd linuxConfiguration/
+* cd <distroDirectory\>
+		
+##### load the function into the shell that will be used to Install the Software 
 * . ../reuse.sh			loads the reusable functions
 * . ./commands.sh		loads the function, that will install the software from different repositories, into the shell
 * . ./repository.sh		loads the associative array(s) that contains software that should be installed on the system into the shell.
 
-##### On the command line call the functions to install the software
+###### On the command line call the functions to install the software
 * installAll 			--> Install all the software using the package executable ( Curretnly install pacman and pip and Docker )
 * updateWorld			--> updates the system
 
-##### Standard functions found in the command.sh and reuse.sh
+###### Standard functions found in the command.sh and reuse.sh
 * updateWorld			--> updates the installed software to the most current versions
 * installAll			--> Installs all the software using the correct package manager for each.
 * search 			--> search for a package based on the string entered
+
+### Setting up the  basic infrastrucutre
+
+The basic infrastructure will consist of the following
+
+* backup 			--> For source code and  
 
 ##### Modify the JON File
 * cd ../configuration 
