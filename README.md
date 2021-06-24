@@ -15,15 +15,20 @@ to building a linux enivronment.  The three steps are:
 	
 #### Transform into a user that can run privlaged commands
 	sudo bash and then enter the password
-			
+	
+### Step 2. Install the software 
 #### Directory containing the scripts to install the software fro the different repositories ( linux distos, pip, docker files )
 * cd linuxConfiguration/distro
 * cd \<distroDirectory\>
 			
 #### load the function into the shell that will be used to Install the Software
-* . ../reuse.sh			loads the reusable functions
+* . ../reuse.sh			loads the reusable functions that will be reused by dffrerent commands.sh 
 * . ./commands.sh		loads the function, that will install the software from different repositories, into the shell
 * . ./repository.sh		loads the associative array(s) that contains software that should be installed on the system into the shell.
+
+Each Command File
+
+Note: Each Command.sh will contain the fucntions to install software from one linux distribution.
 
 ##### On the command line call the functions to install the software
 * installAll 			--> Install all the software using the package executable ( Curretnly install pacman and pip and Docker )
@@ -34,6 +39,7 @@ to building a linux enivronment.  The three steps are:
 * installAll			--> Installs all the software using the correct package manager for each.
 * search 			--> search for a package based on the string entered
 
+### Step 3 Create the Configuration File and parse the configuratin which will convet all the data to environemntal variables that will be used by the script.
 ##### Modify the JON File
 * cd ../configuration 
 * ansible-playbook createDescription.yaml			--> Create a direcotry and copy description.json into it 
