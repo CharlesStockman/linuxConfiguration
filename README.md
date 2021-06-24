@@ -9,13 +9,14 @@ to building a linux enivronment.  The three steps are:
 
 ## Steps
 
+#### Step 1. Prepararation
 ### Clone the directory
 	git clone https://github.com/CharlesStockman/linuxConfiguration.git
 	
 ### Transform into a user that can run privlaged commands
 	sudo bash and then enter the password
 			
-#### Directory containing the scripts to install the software
+#### Directory containing the scripts to install the software fro the different repositories
 * cd linuxConfiguration/distro
 * cd \<distroDirectory\>
 			
