@@ -65,10 +65,26 @@ At this point the software has been installed, but is not configured.
 * . ./getPublicKey.sh						--> export the public key to an enviornmental variable : config_gpg_public_key
 
 #### Setup Password Mananger
-**Introduciton** Setup the storage location for the passwords
+**Introduction** Setup the storage location for the passwords
 **Requirements**: Set GnuPrivacyGuard specifically environmenal variable : config_gpg_public_key
-cd linuxConfiguration/pass
-sh ./configurePass.sh			--> Setup storage for pass command
-sh ./addFirstPassword.sh		--> Add the password from environmental variable config_ssh_backupMachine_passphrase
+* cd linuxConfiguration/basic/pass
+* sh ./configurePass.sh			--> Setup storage for pass command
+* sh ./addFirstPassword.sh		--> Add the password from environmental variable config_ssh_backupMachine_passphrase
+
+#### Setup SSH
+**Introduciton** Setup SSH to login in remote backup machine
+**Requirements** Setup Password Manager has been executed to create config_ssh_backupMachine_passphrase
+* cd linuxConfiguratin/basic/ssh	 
+* sh ./modifySsshConfig.sh		--> Security Feature : Set Password Authentication to No
+* sh ./startSSH.sh			--> Creates the .ssh directory and keys and move the public key to the remote machine
+* . ./startSSHShell.sh			--> Starts the ssh daemon and adds the backup private key
+
+#### Setup Rsync
+**Introduction** Set rsync to move file to the remote backup machine
+**Requirements**: Setup SSH
+* cd linuxConfiguration/basic/rsync
+* sh createRemoteDirectories.sh 		--> Create remote directories on the remote drive where files will be backed up to
+* ansible -playbook createRsyncAliases.yml	--> Create an alias file dotFiles/.rsyncAliases containing alias for easier backup
+
 
 
