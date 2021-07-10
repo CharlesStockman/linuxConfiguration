@@ -41,12 +41,22 @@ Note: Each Command.sh will contain the functions to install software from one li
 
 At this point the software has been installed, but is not configured.
 
-### Step 3 Create the Configuration File and parse the configuratin which will convet all the data to environemntal variables that will be used by the script.
-##### Modify the JON File
-* cd ../configuration 
+### Step 3 Condigure The Basic Software
+
+	The Basic Characteristic of the Software Environment:
+	* Create a configuration file to allow the user to tailer all the configuration scripts
+	* Create a remote drive that can accessed very quickly.
+	* Configure a password manager
+	
+##### Create the Configuration File
+**Introuction** -- Create the enviornment variables that will allow the configuration script to be tailored to the specific environment
+
+* cd linuxConfiguration/basic/configure
 * ansible-playbook createDescription.yaml			--> Create a direcotry and copy description.json into it 
 * cd `<data>`
-* edit the description.json and put the values for your system in it. 
+* edit the description.json and put the values for your system in it.
+* cd ..
+* . ./jsonToEnv.sh data/description.json 			--> Convert the descriptino.json into environemntal variables
 
 #### Run the scripts to configure the system
 * cd `..`
