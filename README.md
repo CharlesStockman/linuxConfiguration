@@ -48,7 +48,7 @@ At this point the software has been installed, but is not configured.
 	* Create a remote drive that can accessed very quickly.
 	* Configure a password manager
 	
-##### Create the Configuration File
+#### Create the Configuration File
 **Introuction** -- Create the enviornment variables that will allow the configuration script to be tailored to the specific environment
 
 * cd linuxConfiguration/basic/configure
@@ -58,13 +58,17 @@ At this point the software has been installed, but is not configured.
 * cd ..
 * . ./jsonToEnv.sh data/description.json 			--> Convert the descriptino.json into environemntal variables
 
-#### Run the scripts to configure the system
-* cd `..`
-* . ./jsonToEnv.sh 			--> Convert the JSON Entries to Environment Varaibles
-* ansible-playbook git.yaml		--> Configures the Global Configuration Git Variables to allow Git to be used		
+#### Setup GnuPrivacyGuard
+**Introduction** Create a public/private key for encryption
+* cd linuxConfiguration/basic/gnuPrivacyGuard
+* sh ./createPgp.sh						--> Create the Public/Private Key for encryption
+* . ./getPublicKey.sh						--> export the public key to an enviornmental variable : config_gpg_public_key
 
-#### Clone all Repositories
-* mkdir $HOME/git
-* cd $HOME/git
-* cloneAll.sh				--> Clones public and private repositories.  
+#### Setup Password Mananger
+**Introduciton** Setup the storage location for the passwords
+**Requirements**: Set GnuPrivacyGuard specifically environmenal variable : config_gpg_public_key
+cd linuxConfiguration/pass
+sh ./configurePass.sh			--> Setup storage for pass command
+sh ./addFirstPassword.sh		--> Add the password from environmental variable config_ssh_backupMachine_passphrase
+
 
