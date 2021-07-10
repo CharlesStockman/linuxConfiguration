@@ -3,9 +3,11 @@
 Distrohopping is a fact of life for linux users.  I am working on making it easier.  The basic idea is there are three steps 
 to building a linux enivronment.  The three steps are:
 
-			* Install the sofware from multiple repostiroes including arch, pip and docker
+			* Install the sofware from multiple repositories including arch, pip and docker
 			* retrieve dotifles
 			* configure the linux system using scripts
+
+By Separating the intallation of the software from the configuration, the configuration script can only be written once and we can have multiple installation scripts where each installation script for a linux distribution.		
 
 ## Steps
 
@@ -17,7 +19,7 @@ to building a linux enivronment.  The three steps are:
 	sudo bash and then enter the password
 	
 ### Step 2. Install the software 
-#### Directory containing the scripts to install the software fro the different repositories ( linux distos, pip, docker files )
+#### Directory containing the scripts to install the software for different repositories ( linux distos, pip, docker files )
 * cd linuxConfiguration/distro
 * cd \<distroDirectory\>
 			
@@ -26,9 +28,7 @@ to building a linux enivronment.  The three steps are:
 * . ./commands.sh		loads the function, that will install the software from different repositories, into the shell
 * . ./repository.sh		loads the associative array(s) that contains software that should be installed on the system into the shell.
 
-Each Command File
-
-Note: Each Command.sh will contain the fucntions to install software from one linux distribution.
+Note: Each Command.sh will contain the functions to install software from one linux distribution.
 
 ##### On the command line call the functions to install the software
 * installAll 			--> Install all the software using the package executable ( Curretnly install pacman and pip and Docker )
@@ -38,6 +38,8 @@ Note: Each Command.sh will contain the fucntions to install software from one li
 * updateWorld			--> updates the installed software to the most current versions
 * installAll			--> Installs all the software using the correct package manager for each.
 * search 			--> search for a package based on the string entered
+
+At this point the software has been installed, but is not configured.
 
 ### Step 3 Create the Configuration File and parse the configuratin which will convet all the data to environemntal variables that will be used by the script.
 ##### Modify the JON File
