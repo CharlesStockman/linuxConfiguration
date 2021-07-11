@@ -3,11 +3,11 @@
 Distrohopping is a fact of life for linux users.  I am working on making it easier.  The basic idea is there are three steps 
 to building a linux enivronment.  The three steps are:
 
-			* Install the sofware from multiple repositories including arch, pip and docker
-			* retrieve dotifles
-			* configure the linux system using scripts
+		* Install the sofware from multiple repositories including arch, pip and docker
+		* retrieve dotifles
+		* configure the linux system using scripts
 
-By Separating the intallation of the software from the configuration, the configuration script can only be written once and we can have multiple installation scripts where each installation script for a linux distribution.		
+By Separating the intallation of the software from the configuration, the configuration script is written once and we can have multiple installation scripts where each installation script for a linux distribution.		
 
 ## Steps
 
@@ -16,6 +16,8 @@ By Separating the intallation of the software from the configuration, the config
 	Create the top leve directory where the files will be located
 	cd into the directory
 	git clone https://github.com/CharlesStockman/linuxConfiguration.git
+	
+	Note that this step may require some tweaking. On some distros, I had to intall git and other distros I had to 
 	
 #### Transform into a user that can run privlaged commands
 	sudo bash and then enter the password
