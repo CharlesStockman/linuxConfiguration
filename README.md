@@ -13,9 +13,9 @@ By Separating the intallation of the software from the configuration, the config
 
 ### Step 1. Prepararation
 #### Clone the directory
-	Create the top leve directory where the files will be located
-	cd into the directory
-	git clone https://github.com/CharlesStockman/linuxConfiguration.git
+	* Create the top leve directory where the files will be located
+	* cd into the directory
+	* git clone https://github.com/CharlesStockman/linuxConfiguration.git
 	
 	Note that this step may require some tweaking. On some distros, I had to intall git and other distros I had to 
 	
