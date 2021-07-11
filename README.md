@@ -43,7 +43,7 @@ Note: Each Command.sh will contain the functions to install software from one li
 
 At this point the software has been installed, but is not configured.
 
-### Step 3 Condigure The Basic Software
+### Step 3 Configure The Basic Software
 
 	The Basic Characteristic of the Software Environment:
 	* Create a configuration file to allow the user to tailer all the configuration scripts
