@@ -1,0 +1,19 @@
+#!/usr/bin/expect
+
+#
+# Add the private key into the SSH authentication agent for implementing single sign-on
+#
+
+set sshFileName  [ lindex $argv 0 ]
+set passphrase   [ lindex $argv 1 ]
+
+set timeout 20
+
+append passphraseWithNewLine $passphrase "\n"
+spawn ssh-add $::env(HOME)/.ssh/$sshFileName  
+expect  {
+	"Enter passphrase" { 
+		send $passphraseWithNewLine 
+		expect "Identity added"  {  } 
+	}
+}

@@ -1,0 +1,35 @@
+{ 
+	"config": {
+
+		"full_name": "enter full name",
+
+		"email": "enter email for the full_name value",
+
+		"dataDirectory": "enter the directory to store data files",
+
+		"homeDirectory": "enter the home directory of the user",
+
+		"textEditor": "enter your favorite editor ( absolute path ) ex. /bin/vi",
+
+		"github": {
+			"username": "enter username for github",
+			"personalAccessToken": "A token generated from Github Settings/Personal Access Tokens"  
+		},
+
+		"daemons": [
+			"enter your daemons on each line"
+		],
+
+		"backupMachine": { 
+			"key_name": "name of the public/private key",
+			"pass_phrase": "ssh own password",
+			"remote_ip": "remote ip of the address",
+			"remote_user": "remote user that will login to the remote ip",
+			"remote_password": "remote password that wil login to the remote ip"
+			"backup_directories": [ "An array of remote directories where the user will store files" ]
+		},
+
+		"defaultCconsole": "The Default GUI Terminal ( ex. konsole -e /bin/bash )"
+
+	}
+}

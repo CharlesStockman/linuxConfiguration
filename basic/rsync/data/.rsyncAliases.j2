@@ -1,0 +1,13 @@
+#
+# Purpose : A script which automatically created aliases for rsync to make it easier to back up
+#           files 
+#
+# Please do not modify this file. It could be regenerated any time and your changes could be lost
+
+{% for item in directories %}
+	function {{ item | replace("/", "_") }}() {
+		rsync -av $1 {{remoteUser}}@{{backupMachine | trim}}:{{item}}
+	} 
+
+{% endfor %}
+

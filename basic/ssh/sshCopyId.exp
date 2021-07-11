@@ -1,0 +1,54 @@
+#!/usr/bin/expect
+
+# Automate ssh-copy-id which copy the information needed by the remote machine to connect. 
+
+set user [ lindex $argv 0 ]
+set host [ lindex $argv 1 ]
+set password [ lindex $argv 2 ]
+set sshFileName [ lindex $argv 3 ]
+#set sshPassPhrase [ lindex $argv 4 ]
+
+
+#
+# Set the time out for the whole program.  Very useful since some pograms may stop before the command have fully executed
+#
+set timeout 20
+
+#
+# Execute the command 
+#
+spawn ssh-copy-id -i $::env(HOME)/.ssh/$sshFileName $user@$host 
+
+#
+# When the comand displays the phrase "continue connecting" then send yes\n
+#
+expect  {
+	"continue connecting" { 
+		send "yes\n"
+	}
+}
+
+#
+# When the command displays the phrase "phrase" then send the passphrase
+#
+#append passphraseWithNewLine $password "\n"
+#expect {
+#	"phrase" {
+#		send "\n"
+#	}
+#}
+
+#
+# When the commadn displays th phrase "assword" then send the passphrase
+#
+append passwordWithNewLine  $password "\n"
+expect {
+	"assword:" {
+		send $passwordWithNewLine
+		expect {
+			"again. "	{ exit 1 }
+			"expecting."	{ }
+			timeout		{ exit 1 }
+		}
+	}
+}

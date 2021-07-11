@@ -1,0 +1,48 @@
+---
+- name: configure awesome  
+  hosts: localhost
+  connection: local
+  # debugger: always
+
+  vars:
+
+  tasks:
+
+     - name:  change the terminal for the menu item "open terminal"
+       ansible.builtin.lineinfile:
+         path: /etc/xdg/awesome/rc.lua
+         regexp: '^terminal\s*=\s*'
+         line: 'terminal = "konsole -e /bin/bash" '
+
+     - name: Add the myWebTools subment to the menu Object
+       ansible.builtin.blockinfile:
+         path: /etc/xdg/awesome/rc.lua
+         insertafter: "Menu\n"
+         marker: " "
+         block: |3
+             --- The Submenu myWebTools and the menu items.
+             myWebTools = {
+                { "Regex Editor", "xdg-open https://regex101.com/" }
+             }
+
+     - name: 1st Step add the comma to last menu item in the menu
+       ansible.builtin.lineinfile:
+         path: /etc/xdg/awesome/rc.lua
+         regexp: "{ \"open terminal\", terminal }\n"
+         line:  "\t{ \"open terminal\", terminal },\n"
+
+     - name: 2nd Step add the menu item it could be a submenu too.
+       ansible.builtin.lineinfile:
+         path: /etc/xdg/awesome/rc.lua
+         insertafter: "\t{ \"open terminal\", terminal },\n"
+         line:  "{ \"\tWeb Tools\", myWebTools, beautiful.awesome_icon }\n"
+
+
+     - name: create the tag table
+       # Create the tag table (virutal desktop ) and for ech tag set the layout
+       # to tiling ( see awful.layout.layouts in rc.lua )
+       ansible.builtin.lineinfile:
+         path: /etc/xdg/awesome/rc.lua
+         regexp: 'awful\.tag\(\{'
+         line: "awful.tag({ \"1\", \"2\" }, s, awful.layout.layouts[2])"
+

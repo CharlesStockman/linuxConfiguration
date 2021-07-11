@@ -1,0 +1,37 @@
+---
+- name: initial mvn  
+  hosts: localhost
+  connection: local 
+  become: false 
+
+  vars:
+
+  tasks:
+  - name: Get a list of all the pom(s) files from the top leve directory 
+    find:
+      paths: "{{ lookup('env', 'config_github_top_level_directory') }}" 
+      patterns: 'pom.xml' 
+      recurse: yes
+    register: output
+
+#
+# Algorithm
+#  Prerequisite : Output of find command is put into the variable output which uses JSON 
+#  Step 1: with_items returns back one element frome file array ( contains data about a specific file
+#  Step 2: The msg print out the specific data that we want to view.
+ 
+#  - debug: 
+#    msg: "{{ item.path }}"
+#    with_items: "{{ output.files }}"
+
+  - name: Currently print out each file that will used
+    shell: |
+      path="{{ item.path }}" 
+
+      dirname=`dirname $path`
+      filename=`basename $path`
+
+      ( cd $dirname ; mvn clean install )
+    args:
+      executable: /bin/sh
+    with_items: "{{ output.files }}"

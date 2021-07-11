@@ -1,0 +1,19 @@
+---
+- name: git tasks
+  hosts: localhost
+  connection: local 
+  become: false 
+
+  vars:
+     git_dir:  /home/cstockman/git
+
+  tasks:
+  - name: create the directory to store the configuration file
+    file: 
+      path: ./data
+      state: directory
+
+  - name: create a copy of the description file that the user can edit. 
+    copy: 
+      src: description.json
+      dest: data/description.json

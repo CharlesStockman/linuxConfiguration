@@ -1,0 +1,37 @@
+{ 
+	"config": {
+
+		"full_name": "Charles Stockman",
+
+		"email": "chuck.stockman@yahoo.com",
+
+		"dataDirectory": "/home/cstockman/data",
+
+		"homeDirectory": "/home/cstockman",
+
+		"textEditor": "/bin/vi",
+
+		"github": {
+			"username": "CharlesStockman",
+			"personalAccessToken": "fbd32062e1e2145be8ad37a4c21bbdde04ac4b1b"  
+		},
+
+		"daemons": [
+			"dockerd" 	
+		],
+
+               "backupMachine": { 
+                        "key_name": "backup",
+			"pass_phrase": "VU5peG1hYzFACg==",
+                        "remote_ip": "192.241.155.86",
+                        "remote_user": "root",
+			"remote_password": "dW5peG1hYzEwCg==",
+			"backup_directories": [ "backup/dotFiles", "backup/other", "backup/games" ]
+                },
+
+
+
+		"defaultConsole": "konsole -e /bin/bash" 
+
+	}
+}

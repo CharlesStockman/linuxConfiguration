@@ -1,0 +1,16 @@
+---
+- name: build rsync alias to archive files and directories
+  hosts: localhost
+  connection: local 
+  become: false 
+
+  vars:
+     directories: "{{ lookup('env', 'config_ssh_backup_directories') }}" 
+     backupMachine: " {{ lookup('env', 'config_ssh_backupMachine_remote_ip') }}"
+     remoteUser: "{{ lookup('env', 'config_ssh_backupMachine_remote_user') }}" 
+
+  tasks:
+  - name: create GIT Directory 
+    template:
+        src: data/.rsyncAliases.j2
+        dest: ./test.sh 
