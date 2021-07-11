@@ -7,7 +7,7 @@ to building a linux enivronment.  The three steps are:
 * retrieve dotifles
 * configure the linux system using scripts
 
-By Separating the intallation of the software from the configuration, the configuration script is written once and we can have multiple installation scripts where each installation script for a linux distribution.		
+By Separating the intallation of the software from the configuration, the configuration script(s) are written once and we can have multiple installation scripts where each installation script for a linux distribution.		
 
 ## Steps
 
