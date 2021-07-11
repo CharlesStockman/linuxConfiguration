@@ -18,7 +18,7 @@ By Separating the intallation of the software from the configuration, the config
 * cd into the directory
 * git clone https://github.com/CharlesStockman/linuxConfiguration.git
 	
-Note that this step may require some tweaking. On some distros, I had to install git and other distros I had git installed. 
+On some distros, I had to install git and other distros I had git installed. There might be tweaking need to clone the directory.
 	
 #### Transform into a user that can run privlaged commands
 sudo bash and then enter the password
