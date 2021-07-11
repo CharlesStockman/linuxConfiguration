@@ -13,6 +13,8 @@ By Separating the intallation of the software from the configuration, the config
 
 ### Step 1. Prepararation
 #### Clone the directory
+	Create the top leve directory where the files will be located
+	cd into the directory
 	git clone https://github.com/CharlesStockman/linuxConfiguration.git
 	
 #### Transform into a user that can run privlaged commands
@@ -85,6 +87,10 @@ At this point the software has been installed, but is not configured.
 * cd linuxConfiguration/basic/rsync
 * sh createRemoteDirectories.sh 		--> Create remote directories on the remote drive where files will be backed up to
 * ansible -playbook createRsyncAliases.yml	--> Create an alias file dotFiles/.rsyncAliases containing alias for easier backup
+
+#### Setup Github
+cd linuxConfiguration
+ansible-playbook git.yaml
 
 
 
