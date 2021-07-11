@@ -21,7 +21,7 @@ By Separating the intallation of the software from the configuration, the config
 Note that this step may require some tweaking. On some distros, I had to install git and other distros I had git installed. 
 	
 #### Transform into a user that can run privlaged commands
-	sudo bash and then enter the password
+sudo bash and then enter the password
 	
 ### Step 2. Install the software 
 #### Directory containing the scripts to install the software for different repositories ( linux distos, pip, docker files )
