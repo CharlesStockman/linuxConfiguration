@@ -8,15 +8,18 @@ declare -A dockerList
 declare -A globalNpmList
 
 softwareList[ansible]="ansible"
-softwareList[bin]="jq gcc"
+softwareList[bin]="jq gcc except"
 softwareList[buildTools]="maven"
 softwareList[ide]="intellij-idea-community-edition 2:2020.2.3-1 community/pycharm-community-edition 2020.2.3-3"
 softwareList[docker]="docker"
 softwareList[qemu]="qemu"
 softwareList[awesome]="awesome"
 softwareList[nodejs]="nodejs npm"
+softwareList[editors]="atom"
+softwarelist[c-tools]="make"
+softwareList[security]="pass"
 
-pipList[libraries]="psutil"
+pipList[libraries]="psutil notebook virtualenv pipeenv"
 
 dockerList[databases]="mongo"
 
