@@ -19,7 +19,7 @@ softwareList[editors]="atom"
 softwarelist[c-tools]="make"
 softwareList[security]="pass"
 
-pipList[libraries]="psutil notebook virtualenv pipeenv"
+pipList[libraries]="psutil notebook virtualenv pipenv"
 
 dockerList[databases]="mongo"
 
