@@ -25,8 +25,7 @@ sudo bash and then enter the password
 	
 ### Step 2. Install the software 
 #### Directory containing the scripts to install the software for different repositories ( linux distos, pip, docker files )
-* cd linuxConfiguration/distro
-* cd \<distroDirectory\>
+* cd linuxConfiguration/\<distroDirectory\>
 			
 #### load the function into the shell that will be used to Install the Software
 * . ../reuse.sh			loads the reusable functions that will be reused by dffrerent commands.sh 
